@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovendus OMR Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Full-screen background — game gradient (always fills viewport) -->
+  <div class="background-layer" id="bg-game">
+    <div class="bg-gradient"></div>
+  </div>
+
+  <!-- Full-screen background — raffle grey (hidden by default) -->
+  <div class="background-layer raffle-bg" id="bg-raffle"></div>
+
+  <!-- Full-width shadow under the raffle header (sits above the 9:16 wrapper) -->
+  <div class="raffle-header-shadow" id="raffle-header-shadow"></div>
+
+  <!-- Full-screen background — T&C dark overlay (hidden by default) -->
+  <div class="background-layer tc-bg" id="bg-tc">
+    <div class="tc-card">
+      <h2 class="tc-title">Terms and Conditions of Participation</h2>
+      <div class="tc-text">
+        <p>These Terms and Conditions apply to the contest held as part of the interactive game at the Sovendus GmbH booth at OMR 2026 in Hamburg. Participants take part voluntarily and free of charge.</p>
+        <p><strong>1. Organizer</strong></p>
+        <p>The organizer of the contest is Sovendus GmbH, c/o Design Offices Karlsruhe Bahnhofplatz, Bahnhofplatz 12, 76137 Karlsruhe, Germany (hereinafter &ldquo;Organizer&rdquo;).</p>
+        <p><strong>2. Purpose and Duration of the Contest</strong></p>
+        <p>The contest will take place on May 5 and 6, 2026, during OMR 2026 at the Organizer&rsquo;s booth.</p>
+        <p>A short interactive game will be available on a touchscreen. Participants will be shown several &ldquo;shopper profiles&rdquo; based on aggregated insights from the Organizer&rsquo;s platform. The task is to correctly match the next purchased product to the given answer options.</p>
+        <p>The correct answers will not be displayed during the event. They may be published via the organizer&rsquo;s social media channels after the event concludes.</p>
+        <p>Participation in the contest and claiming a prize are free of charge; no purchase of goods or services is required.</p>
+        <p><strong>3. Eligibility</strong></p>
+        <p>Eligible to participate are natural persons who are attending OMR 2026 and have reached the age of 18. By participating, participants confirm that they are of legal age. The organizer is entitled to request appropriate proof of age in individual cases.</p>
+        <p>Participants may come from any country. Employees of Sovendus GmbH and its affiliated companies are excluded from participation.</p>
+        <p>Each person may participate only once. Multiple entries, particularly through the use of multiple email addresses or other circumvention tactics, are prohibited.</p>
+        <p>Participation is excluded if it is prohibited under the regulations applicable at the participant&rsquo;s place of residence. Participants are personally responsible for complying with the regulations applicable to them.</p>
+        <p><strong>4. Participation Process and Chance of Winning</strong></p>
+        <p>Participation in the contest requires that the game at the booth be completed in full and that the data marked as mandatory in the entry process be provided completely and accurately. Mandatory information includes first name, last name, company, email address, and the selection of a preferred prize.</p>
+        <p>In addition, the participant&rsquo;s visitor badge will be scanned as part of the badge scanning process provided by the organizer of the OMR Festival.</p>
+        <p>The professional contact information provided to Sovendus by the OMR Festival organizer through this process may be linked to the data collected as part of the contest.</p>
+        <p>The number of correct answers determines the number of entries in the drawing. One entry is awarded for each correct answer. Anyone who does not answer a question correctly will not participate in the drawing.</p>
+        <p>Additionally, an extra entry may be awarded if participants follow the LinkedIn company profile of Sovendus GmbH during the participation period. To qualify for this extra entry, the follow must be documented during the participation process or verified upon request at the organizer&rsquo;s booth.</p>
+        <p>The contest is not affiliated with LinkedIn and is in no way sponsored, endorsed, or organized by LinkedIn.</p>
+        <p><strong>5. Prizes</strong></p>
+        <p>A total of three winners will be selected by random drawing. The following prizes are available:</p>
+        <ul>
+          <li>2 x Emma &ldquo;Elite&rdquo; Pillow</li>
+          <li>IKEA gift card worth EUR 150</li>
+          <li>H&amp;M gift card worth EUR 150</li>
+          <li>EIS gift card worth EUR 150</li>
+          <li>Philips Sonicare 7100</li>
+          <li>NINJA Foodi MAX Air Fryer</li>
+        </ul>
+        <p>Participants select a preferred prize as part of their entry. The organizer intends to provide each winner with the prize they selected. Since the prizes are procured only after the drawing, multiple winners may receive the same selected prize.</p>
+        <p>If a prize is unavailable for reasons beyond the organizer&rsquo;s control, the organizer is entitled to provide an equivalent substitute.</p>
+        <p>Cash payment, exchange, or transfer of the prize claim to third parties is excluded.</p>
+        <p><strong>6. Determination of Winners and Prize Distribution</strong></p>
+        <p>The drawing will take place after the end of the event on a random basis based on the number of entries received.</p>
+        <p>Winners will be notified by email after the drawing. To receive their prize, winners will then be asked to provide a shipping address.</p>
+        <p>If a selected winner does not respond within 14 calendar days of the initial prize notification, the prize claim expires. In this case, the organizer is entitled to draw a replacement winner.</p>
+        <p><strong>7. Exclusion from Participation</strong></p>
+        <p>The organizer is entitled to exclude from participation any persons who violate these terms and conditions or applicable law, provide false information, attempt to manipulate the course of the contest through technical or organizational means, or infringe upon the rights of third parties.</p>
+        <p>In the event of a justified exclusion, prizes may also be revoked and reclaimed retroactively.</p>
+        <p><strong>8. Early Termination or Modification of the Contest</strong></p>
+        <p><strong>Please note that the availability and functionality of the contest cannot be guaranteed. The contest may be terminated in whole or in part, or its course altered, due to external circumstances or constraints, even without observing deadlines, without this giving rise to any claims by participants against the contest organizer.</strong></p>
+        <p><strong>This may include legal or technical reasons (e.g., computer virus, manipulation, or errors in software or hardware) that could impair the proper conduct of the contest.</strong></p>
+        <p><strong>9. Liability</strong></p>
+        <p>The organizer is liable in accordance with statutory provisions, unless otherwise specified in these Terms and Conditions.</p>
+        <p>In cases of simple negligence, the organizer is liable&mdash;subject to statutory limitations of liability&mdash;only for damages resulting from injury to life, limb, or health, as well as for damages resulting from a breach of a material contractual obligation. In such cases, liability is limited to foreseeable, typically occurring damages. An essential contractual obligation is an obligation whose fulfillment is essential for the proper conduct of the contest and on whose compliance participants may reasonably rely.</p>
+        <p>To the extent that the organizer&rsquo;s liability is excluded or limited, this also applies in favor of its legal representatives, employees, and vicarious agents.</p>
+        <p><strong>10. Final Provisions</strong></p>
+        <p>Should any provision of these Terms and Conditions be invalid or become ineffective, this shall not affect the validity of the remainder of the agreement. The ineffective provision shall be replaced by a valid provision that, in a legally permissible manner, comes as close as possible to the economic meaning and purpose of the ineffective provision.</p>
+        <p>The law of the Federal Republic of Germany applies, excluding conflict-of-laws provisions. Mandatory consumer protection regulations of the country in which participants have their habitual residence remain unaffected.</p>
+      </div>
+    </div>
+    <div class="screen7-card">
+      <div class="screen7-view screen7-view-form">
+        <button type="button" class="screen7-back" id="screen7-back">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 10H4M9 5l-5 5 5 5" stroke="#2a3049" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="screen7-icon-wrap">
+          <img src="../assets/Network Circle - Blue.svg" alt="" class="screen7-icon">
+        </div>
+        <h2 class="screen7-title">Almost done!</h2>
+        <p class="screen7-subtitle">Confirm your participation and enter the raffle for your chosen prize.</p>
+        <form class="screen7-form" id="screen7-form">
+          <p class="screen7-disclaimer">
+            With clicking on "Participate" you confirm that you are 18+ and agree to the
+            <a href="#" class="screen7-disclaimer-link" id="link-terms">terms &amp; conditions</a>
+            as well as our
+            <a href="#" class="screen7-disclaimer-link" id="link-privacy">privacy policy</a>.
+          </p>
+          <button type="submit" class="screen7-btn btn-active">
+            Participate
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 5l5 5-5 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="screen7-view screen7-view-legal" data-legal-view="terms">
+        <div class="screen7-legal-header">
+          <button type="button" class="screen7-legal-back" data-legal-back>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 10H4M9 5l-5 5 5 5" stroke="#2a3049" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <h2 class="screen7-legal-title">Terms &amp; Conditions</h2>
+        </div>
+        <div class="screen7-legal-text">
+          <p>These Terms and Conditions apply to the contest held as part of the interactive game at the Sovendus GmbH booth at OMR 2026 in Hamburg. Participants take part voluntarily and free of charge.</p>
+          <p><strong>1. Organizer</strong></p>
+          <p>The organizer of the contest is Sovendus GmbH, c/o Design Offices Karlsruhe Bahnhofplatz, Bahnhofplatz 12, 76137 Karlsruhe, Germany (hereinafter &ldquo;Organizer&rdquo;).</p>
+          <p><strong>2. Purpose and Duration of the Contest</strong></p>
+          <p>The contest will take place on May 5 and 6, 2026, during OMR 2026 at the Organizer&rsquo;s booth.</p>
+          <p>A short interactive game will be available on a touchscreen. Participants will be shown several &ldquo;shopper profiles&rdquo; based on aggregated insights from the Organizer&rsquo;s platform. The task is to correctly match the next purchased product to the given answer options.</p>
+          <p>The correct answers will not be displayed during the event. They may be published via the organizer&rsquo;s social media channels after the event concludes.</p>
+          <p>Participation in the contest and claiming a prize are free of charge; no purchase of goods or services is required.</p>
+          <p><strong>3. Eligibility</strong></p>
+          <p>Eligible to participate are natural persons who are attending OMR 2026 and have reached the age of 18. By participating, participants confirm that they are of legal age. The organizer is entitled to request appropriate proof of age in individual cases.</p>
+          <p>Participants may come from any country. Employees of Sovendus GmbH and its affiliated companies are excluded from participation.</p>
+          <p>Each person may participate only once. Multiple entries, particularly through the use of multiple email addresses or other circumvention tactics, are prohibited.</p>
+          <p>Participation is excluded if it is prohibited under the regulations applicable at the participant&rsquo;s place of residence. Participants are personally responsible for complying with the regulations applicable to them.</p>
+          <p><strong>4. Participation Process and Chance of Winning</strong></p>
+          <p>Participation in the contest requires that the game at the booth be completed in full and that the data marked as mandatory in the entry process be provided completely and accurately. Mandatory information includes first name, last name, company, email address, and the selection of a preferred prize.</p>
+          <p>In addition, the participant&rsquo;s visitor badge will be scanned as part of the badge scanning process provided by the organizer of the OMR Festival.</p>
+          <p>The professional contact information provided to Sovendus by the OMR Festival organizer through this process may be linked to the data collected as part of the contest.</p>
+          <p>The number of correct answers determines the number of entries in the drawing. One entry is awarded for each correct answer. Anyone who does not answer a question correctly will not participate in the drawing.</p>
+          <p>Additionally, an extra entry may be awarded if participants follow the LinkedIn company profile of Sovendus GmbH during the participation period. To qualify for this extra entry, the follow must be documented during the participation process or verified upon request at the organizer&rsquo;s booth.</p>
+          <p>The contest is not affiliated with LinkedIn and is in no way sponsored, endorsed, or organized by LinkedIn.</p>
+          <p><strong>5. Prizes</strong></p>
+          <p>A total of three winners will be selected by random drawing. The following prizes are available:</p>
+          <ul>
+            <li>2 x Emma &ldquo;Elite&rdquo; Pillow</li>
+            <li>IKEA gift card worth EUR 150</li>
+            <li>H&amp;M gift card worth EUR 150</li>
+            <li>EIS gift card worth EUR 150</li>
+            <li>Philips Sonicare 7100</li>
+            <li>NINJA Foodi MAX Air Fryer</li>
+          </ul>
+          <p>Participants select a preferred prize as part of their entry. The organizer intends to provide each winner with the prize they selected. Since the prizes are procured only after the drawing, multiple winners may receive the same selected prize.</p>
+          <p>If a prize is unavailable for reasons beyond the organizer&rsquo;s control, the organizer is entitled to provide an equivalent substitute.</p>
+          <p>Cash payment, exchange, or transfer of the prize claim to third parties is excluded.</p>
+          <p><strong>6. Determination of Winners and Prize Distribution</strong></p>
+          <p>The drawing will take place after the end of the event on a random basis based on the number of entries received.</p>
+          <p>Winners will be notified by email after the drawing. To receive their prize, winners will then be asked to provide a shipping address.</p>
+          <p>If a selected winner does not respond within 14 calendar days of the initial prize notification, the prize claim expires. In this case, the organizer is entitled to draw a replacement winner.</p>
+          <p><strong>7. Exclusion from Participation</strong></p>
+          <p>The organizer is entitled to exclude from participation any persons who violate these terms and conditions or applicable law, provide false information, attempt to manipulate the course of the contest through technical or organizational means, or infringe upon the rights of third parties.</p>
+          <p>In the event of a justified exclusion, prizes may also be revoked and reclaimed retroactively.</p>
+          <p><strong>8. Early Termination or Modification of the Contest</strong></p>
+          <p><strong>Please note that the availability and functionality of the contest cannot be guaranteed. The contest may be terminated in whole or in part, or its course altered, due to external circumstances or constraints, even without observing deadlines, without this giving rise to any claims by participants against the contest organizer.</strong></p>
+          <p><strong>This may include legal or technical reasons (e.g., computer virus, manipulation, or errors in software or hardware) that could impair the proper conduct of the contest.</strong></p>
+          <p><strong>9. Liability</strong></p>
+          <p>The organizer is liable in accordance with statutory provisions, unless otherwise specified in these Terms and Conditions.</p>
+          <p>In cases of simple negligence, the organizer is liable&mdash;subject to statutory limitations of liability&mdash;only for damages resulting from injury to life, limb, or health, as well as for damages resulting from a breach of a material contractual obligation. In such cases, liability is limited to foreseeable, typically occurring damages. An essential contractual obligation is an obligation whose fulfillment is essential for the proper conduct of the contest and on whose compliance participants may reasonably rely.</p>
+          <p>To the extent that the organizer&rsquo;s liability is excluded or limited, this also applies in favor of its legal representatives, employees, and vicarious agents.</p>
+          <p><strong>10. Final Provisions</strong></p>
+          <p>Should any provision of these Terms and Conditions be invalid or become ineffective, this shall not affect the validity of the remainder of the agreement. The ineffective provision shall be replaced by a valid provision that, in a legally permissible manner, comes as close as possible to the economic meaning and purpose of the ineffective provision.</p>
+          <p>The law of the Federal Republic of Germany applies, excluding conflict-of-laws provisions. Mandatory consumer protection regulations of the country in which participants have their habitual residence remain unaffected.</p>
+        </div>
+      </div>
+
+      <div class="screen7-view screen7-view-legal" data-legal-view="privacy">
+        <div class="screen7-legal-header">
+          <button type="button" class="screen7-legal-back" data-legal-back>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 10H4M9 5l-5 5 5 5" stroke="#2a3049" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <h2 class="screen7-legal-title">Privacy Policy</h2>
+        </div>
+        <div class="screen7-legal-text">
+          <p>This privacy notice provides information about the processing of personal data in connection with participation in the contest at the Sovendus booth at OMR 2026.</p>
+          <p><strong>1. Data Controller</strong></p>
+          <p>The data controller within the meaning of Article 4(7) of the GDPR is Sovendus GmbH, c/o Design Offices Karlsruhe Bahnhofplatz, Bahnhofplatz 12, 76137 Karlsruhe, Germany.</p>
+          <p>You can contact our Data Protection Officer by email at service@sovendus.com or by mail at Sovendus GmbH, Data Protection Officer, Bahnhofplatz 12, 76137 Karlsruhe, Germany.</p>
+          <p><strong>2. What data we process</strong></p>
+          <p>In connection with the sweepstakes, we process the following data in particular:</p>
+          <ul>
+            <li>First name and last name,</li>
+            <li>Title,</li>
+            <li>Company name,</li>
+            <li>Email address,</li>
+            <li>Country,</li>
+            <li>Phone number,</li>
+            <li>Selected preferred prize,</li>
+            <li>Details regarding the game, in particular the number of correct answers and the resulting number of entries,</li>
+            <li>if applicable, information that an additional entry was included due to following the company&rsquo;s LinkedIn profile,</li>
+            <li>Time of participation, as well as technical and organizational identification data necessary for conducting the drawing.</li>
+          </ul>
+          <p>If you are selected in the drawing, we will also process your shipping address to send you the prize.</p>
+          <p>Participation data is initially stored locally on the device used for the contest in an Excel file and transferred to the CRM system we use (Salesforce.com Germany GmbH, Erika-Mann-Str. 31, 80636 Munich) after the event. Data is transferred to the U.S. in connection with the use of Salesforce based on the EU-U.S. Data Privacy Framework (adequacy decision pursuant to Art. 45 GDPR) and, additionally, based on EU Standard Contractual Clauses (Art. 46(2)(c) GDPR).</p>
+          <p><strong>3. Purposes and Legal Bases of Processing</strong></p>
+          <p><strong>As part of your participation in the contest, we must scan your visitor badge at our booth. In doing so, we receive your professional contact information from the organizer of the OMR Festival or via the platform provided by the organizer. This may include, in particular, your name, title, company, business email address, country, and phone number.</strong></p>
+          <p><strong>We process this data together with the information you provide as part of the sweepstakes to associate your participation with a specific individual, prevent multiple entries, determine the number of entries, conduct the drawing, notify winners, and facilitate prize fulfillment in the event of a win. In addition, we may combine the data entered as part of the sweepstakes with the professional contact information provided to us via the badge scan to uniquely identify you as a participant and to document the proper conduct of the sweepstakes.</strong></p>
+          <p><strong>The legal basis for this is Article 6(1)(b) of the GDPR, insofar as the processing is necessary for the conduct of the sweepstakes and the fulfillment of the resulting contractual obligation.</strong></p>
+          <p><strong>To the extent that we process your data beyond this to prevent abuse, to ensure the fair and proper conduct of the contest, to verify the validity of participation in the context of a business event, and for documentation and, if necessary, to defend against or assert claims in connection with the contest, this is based on Article 6(1)(f) of the GDPR. Our legitimate interest lies in the integrity, security, and legally compliant follow-up of the campaign.</strong></p>
+          <p><strong>We do not receive the contact data processed as part of the badge scan directly from you, but rather from the organizer of the OMR Festival or via the OMR Manager platform provided by the organizer.</strong></p>
+          <p><strong>4. Recipients of the data</strong></p>
+          <p>Within Sovendus GmbH, only those departments that require your data for the preparation, execution, and follow-up of the contest will have access to it, in particular the teams responsible for events/marketing, IT/administration, CRM documentation, and&mdash;in the event of a win&mdash;shipping and fulfillment.</p>
+          <p>In addition, IT and CRM service providers, as well as shipping and logistics service providers in the event of a win, may have access to personal data to the extent necessary for the respective purposes.</p>
+          <p><strong>5. Data Transfer to Third Countries</strong></p>
+          <p>The primary conduct of the contest takes place locally on the trade show booth device. To the extent that a CRM or IT system used after the event involves a third country or such involvement cannot be ruled out in the context of support or administrative services, data transfer will only take place in compliance with Art. 44 et seq. of the GDPR, in particular on the basis of an adequacy decision or appropriate safeguards.</p>
+          <p><strong>6. Retention period</strong></p>
+          <p>We generally store the data collected in connection with the sweepstakes only for as long as is necessary for the conduct of the sweepstakes, the determination of winners, establishing contact, prize fulfillment, internal documentation of the trade show promotion, and the processing of any inquiries or claims.</p>
+          <p>Data from winners, in particular delivery addresses, will be deleted after the prize has been fully shipped, provided that there are no legal retention obligations or legitimate reasons for further storage.</p>
+          <p>To the extent that data is necessary for the defense or assertion of legal claims, it will be stored until the expiration of the relevant statutory limitation periods.</p>
+          <p><strong>7. Obligation to Provide Data</strong></p>
+          <p>Providing your first name, last name, company, email address, and preferred prize is required to participate in the drawing. Participation in the drawing is not possible without this information.</p>
+          <p>Providing a shipping address is only required if you win. Without a shipping address, the prize cannot be sent.</p>
+          <p><strong>8. Rights of Data Subjects</strong></p>
+          <p>Subject to the statutory requirements, you are entitled in particular to the following rights:</p>
+          <p><strong>Access</strong> &mdash; Access to the personal data processed about you (Art. 15 GDPR).</p>
+          <p><strong>Rectification</strong> &mdash; Rectification of inaccurate data or completion of incomplete data (Art. 16 GDPR).</p>
+          <p><strong>Erasure</strong> &mdash; Erasure of your personal data under the conditions set forth in Art. 17 GDPR.</p>
+          <p><strong>Restriction</strong> &mdash; Restriction of processing pursuant to Art. 18 GDPR.</p>
+          <p><strong>Data portability</strong> &mdash; Receipt of the data you have provided in a structured, commonly used, and machine-readable format pursuant to Article 20 of the GDPR, provided that the legal requirements are met.</p>
+          <p><strong>Objection</strong> &mdash; Objection to processing based on Article 6(1)(f) of the GDPR for reasons arising from your particular situation (Article 21 of the GDPR).</p>
+          <p><strong>Complaint</strong> &mdash; Lodging a complaint with a data protection supervisory authority pursuant to Article 77 of the GDPR.</p>
+          <p>To exercise your rights or if you have questions regarding data protection, you may contact us at any time using the contact information provided in Section 1.</p>
+          <p><strong>9. No automated decision-making</strong></p>
+          <p>No decision-making based solely on automated processing, including profiling within the meaning of Article 22 of the GDPR, takes place. Winners are determined by a random drawing based on the number of entries received.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9:16 game wrapper — all screens live inside -->
+  <div class="game-wrapper">
+
+    <!-- Screen 1 — Screensaver / Attract -->
+    <div id="screen-1" class="screen game-screen active">
+      <div class="screen-inner screen1-content">
+        <div class="screen1-top">
+          <h1 class="screen1-headline">Can you predict what's next?</h1>
+          <p class="screen1-subtext">Match unexpected purchases in 3 rounds.<br>Then pick your prize and enter the raffle.</p>
+          <img src="../assets/vouchi_start_screen.png" alt="Vouchi mascot" class="screen1-mascot">
+        </div>
+        <button id="btn-start" class="btn-primary btn-start">Start</button>
+        <img src="../assets/Sovendus_Logo_Blue.svg" alt="Sovendus" class="logo-bottom">
+      </div>
+    </div>
+
+    <!-- Screen Ready — Badge scan prompt before round 1 -->
+    <div id="screen-ready" class="screen game-screen">
+      <div class="screen-inner screen1-content">
+        <div class="screen1-top">
+          <h1 class="screen1-headline">Get ready!</h1>
+          <p class="screen1-subtext">Before we start, let someone from our team scan your badge so we can collect your guesses properly.</p>
+        </div>
+        <button id="btn-ready" class="btn-primary btn-start">Ready. Set. Go.</button>
+        <img src="../assets/Sovendus_Logo_Blue.svg" alt="Sovendus" class="logo-bottom logo-restart" onclick="resetGame()">
+      </div>
+    </div>
+
+    <!-- Screen 2 — Round 1 -->
+    <div id="screen-2" class="screen game-screen">
+      <div class="screen-inner round-content"></div>
+    </div>
+
+    <!-- Screen 3 — Round 2 -->
+    <div id="screen-3" class="screen game-screen">
+      <div class="screen-inner round-content"></div>
+    </div>
+
+    <!-- Screen 4 — Round 3 -->
+    <div id="screen-4" class="screen game-screen">
+      <div class="screen-inner round-content"></div>
+    </div>
+
+    <!-- Screen 5 — Thank you + Sovendus banner -->
+    <div id="screen-5" class="screen game-screen">
+      <div class="screen-inner screen5-content">
+        <div class="screen5-text">
+          <h2 class="screen5-thankyou">Thank you for playing!</h2>
+          <p class="screen5-solutions">The correct matches will be published on our LinkedIn after the OMR festival and sent to your inbox if you enter our raffle.</p>
+        </div>
+        <div class="screen5-modal glass-card">
+          <div class="screen5-gift-wrap">
+            <img src="../assets/assets_and_code_for_selection_part/present.png" alt="Gift" class="screen5-gift-img">
+          </div>
+          <h2 class="screen5-headline">Don&apos;t miss out!</h2>
+          <p class="screen5-subtext">Submit your answers, pick your preferred prize, and get a chance to win it in our raffle.</p>
+          <button id="btn-pick-now" class="btn-pick-now">Pick now</button>
+        </div>
+        <img src="../assets/Sovendus_Logo_Blue.svg" alt="Sovendus" class="logo-bottom logo-restart" onclick="resetGame()">
+      </div>
+    </div>
+
+    <!-- Screen 6 — Raffle product selection -->
+    <div id="screen-6" class="screen raffle-screen">
+      <div class="screen6-content">
+        <div class="raffle-header">
+          <div class="raffle-header-inner">
+            <div class="raffle-header-left">
+              <div class="raffle-logo-box" onclick="resetGame()">
+                <img src="../assets/Network Circle - Blue.svg" alt="Sovendus" class="raffle-header-logo">
+              </div>
+              <div class="raffle-header-right-col">
+                <div class="raffle-header-top-row">
+                  <div class="raffle-header-titles">
+                    <span class="raffle-header-subtitle">Sovendus Raffle</span>
+                    <span class="raffle-header-title">Choose your raffle prize</span>
+                  </div>
+                  <img src="../assets/assets_and_code_for_selection_part/info_icon.png" alt="Info" class="raffle-header-info" id="info-toggle">
+                </div>
+                <div class="raffle-header-counter">
+                  <div class="raffle-counter-left">
+                    <img src="../assets/assets_and_code_for_selection_part/present_icon.png" alt="" class="raffle-counter-icon">
+                    <span id="raffle-count" class="raffle-counter-text">0/1</span>
+                  </div>
+                  <div class="raffle-counter-bar">
+                    <div class="raffle-counter-bar-fill" id="raffle-bar-fill"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="raffle-list" id="raffle-list"></div>
+      </div>
+    </div>
+
+    <!-- Screen 7 — Almost done modal (overlay on Screen 6, content in tc-bg layer) -->
+    <div id="screen-7" class="modal-overlay"></div>
+
+    <!-- Screen 8 — Final thank you -->
+    <div id="screen-8" class="screen game-screen">
+      <div class="screen-inner screen8-content">
+        <div class="screen8-top">
+          <img src="../assets/vouchi_end_screen.png" alt="Vouchi mascot" class="screen8-mascot">
+          <h1 class="screen8-headline">Thank you for<br>participating!</h1>
+          <p class="screen8-subtext">Want an extra chance of winning? Follow us on<br>LinkedIn for a bonus raffle entry.</p>
+        </div>
+        <button id="btn-restart" class="btn-primary btn-restart">Play again</button>
+        <img src="../assets/Sovendus_Logo_Blue.svg" alt="Sovendus" class="logo-bottom">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="config.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

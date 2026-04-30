@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Did you match the right purchases? — Sovendus &times; OMR</title>
+  <meta name="description" content="Three shoppers, three real purchases, hundreds of guesses at the Sovendus booth. See what OMR Festival 2026 visitors thought — and the actual answers.">
+
+  <link rel="preload" href="./assets/fonts/TT_Commons_Pro_Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/TT_Commons_Pro_DemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/images/bg-gradient.webp" as="image" type="image/webp">
+
+  <style>
+    /* ===== FONTS ===== */
+    @font-face {
+      font-family: 'TT Commons Pro';
+      src: url('./assets/fonts/TT_Commons_Pro_Regular.woff2') format('woff2');
+      font-weight: 400 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TT Commons Pro';
+      src: url('./assets/fonts/TT_Commons_Pro_DemiBold.woff2') format('woff2');
+      font-weight: 600 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ===== TOKENS ===== */
+    :root {
+      --navy: #2A3049;
+      --soft-blue: #F6F7FF;
+      --soft-blue-strong: #E2E6F5;
+      --pastel-blue: #BFC9F1;
+      --muted: #444753;
+      --subtle: #686B78;
+      --orange: #FE7E1C;
+      --orange-1: #FF6B35;
+      --orange-2: #FF8C42;
+      --radius: 10px;
+      --radius-lg: 24px;
+      --max-w: 1200px;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'TT Commons Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 450;
+      color: var(--navy);
+      background: #eef1ff url('./assets/images/bg-gradient.webp') center / cover no-repeat;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    a { color: inherit; }
+
+    /* ===== LAYOUT ===== */
+    .page { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: clamp(36px, 6vw, 64px) 0 clamp(6px, 1vw, 12px);
+    }
+    .hero-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #ffffff;
+      border: 1px solid var(--soft-blue-strong);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 5.6vw, 66px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      color: var(--navy);
+      margin: 0 0 8px;
+    }
+    .hero h1 .nobr { white-space: nowrap; }
+    .hero h1 .eyes {
+      display: inline-block;
+      vertical-align: -0.08em;
+      margin-left: 0.18em;
+      font-size: 0.9em;
+    }
+    .hero .sub {
+      font-size: clamp(15px, 1.6vw, 19px);
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ===== INTRO ===== */
+    .intro {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(8px, 1.2vw, 14px) 0 clamp(28px, 4vw, 48px);
+      text-align: left;
+    }
+    .intro p {
+      font-size: clamp(15px, 1.5vw, 17px);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .intro p em { font-style: italic; color: var(--navy); }
+    .intro p strong { font-weight: 600; color: var(--navy); }
+
+    /* ===== REVEALS (game-style stacked cards) ===== */
+    .reveals {
+      max-width: 580px;
+      margin: 0 auto;
+      padding-bottom: clamp(40px, 6vw, 72px);
+    }
+    .persona {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 6px 22px rgba(42, 48, 73, 0.06);
+      margin-bottom: clamp(20px, 3vw, 32px);
+      overflow: hidden;
+    }
+    .persona:last-child { margin-bottom: 0; }
+
+    .psection {
+      position: relative;
+      padding: clamp(18px, 2.4vw, 22px) clamp(28px, 4vw, 40px);
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 2.5vw, 22px);
+    }
+    .psection + .psection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: clamp(28px, 4vw, 40px);
+      right: clamp(28px, 4vw, 40px);
+      height: 1px;
+      background: rgba(42, 48, 73, 0.10);
+    }
+    .psection.flip { flex-direction: row-reverse; }
+
+    .pblock-text { flex: 1; min-width: 0; }
+
+    .pblock-img {
+      flex-shrink: 0;
+      width: clamp(120px, 22vw, 170px);
+      height: clamp(120px, 22vw, 170px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pblock-img img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Game-style first block: name+age, "bought a", product */
+    .pblock-name {
+      font-size: clamp(22px, 2.8vw, 28px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+      display: block;
+    }
+    .pblock-context {
+      font-size: 14px;
+      color: var(--subtle);
+      margin-top: 6px;
+      display: block;
+    }
+    .pblock-product {
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-top: 2px;
+      display: block;
+    }
+    .pblock-product .pct {
+      background: linear-gradient(90deg, var(--orange-1), var(--orange-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .pblock-label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--subtle);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .pblock-question {
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      display: block;
+    }
+
+    /* ===== SCRATCH-OFF ===== */
+    .scratch-wrap {
+      flex-shrink: 0;
+      width: clamp(180px, 32vw, 240px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scratch {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px dashed var(--pastel-blue);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .scratch-answer {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+      gap: 6px;
+    }
+    .scratch-answer img {
+      width: auto;
+      max-width: 88%;
+      max-height: 75%;
+      object-fit: contain;
+    }
+    .scratch-answer .answer-text {
+      font-size: clamp(16px, 1.8vw, 19px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    @media (max-width: 600px) {
+      .psection {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+        gap: 14px;
+      }
+      .psection.flip { flex-direction: column; }
+      .pblock-img { width: 100%; height: 110px; }
+      .scratch-wrap { width: 100%; }
+      .scratch { aspect-ratio: 3 / 2; }
+    }
+    .scratch-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+      touch-action: none;
+      transition: opacity 400ms ease;
+    }
+    .scratch-canvas:active { cursor: grabbing; }
+    .scratch-hint {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.18);
+      transition: opacity 200ms ease;
+    }
+    .reveal-btn {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--subtle);
+      padding: 6px 14px;
+      border: 1px solid var(--soft-blue-strong);
+      border-radius: 8px;
+      background: #ffffff;
+      transition: color 200ms, border-color 200ms;
+    }
+    .reveal-btn:hover, .reveal-btn:focus-visible {
+      color: var(--navy);
+      border-color: var(--pastel-blue);
+      outline: none;
+    }
+    .reveal-btn:focus-visible { box-shadow: 0 0 0 3px rgba(254, 126, 28, 0.25); }
+
+    /* ===== CTA ===== */
+    .cta {
+      max-width: 880px;
+      margin: 0 auto clamp(32px, 5vw, 64px);
+      background: var(--navy);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 6px 22px rgba(42, 48, 73, 0.10);
+      padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 40px);
+    }
+    .cta-content { flex: 1; }
+    .cta h2 {
+      font-size: clamp(26px, 3.6vw, 38px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .cta p {
+      font-size: clamp(15px, 1.5vw, 17px);
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 24px;
+      line-height: 1.55;
+      max-width: 540px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--navy);
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 200ms, color 200ms, transform 200ms;
+    }
+    .cta-button:hover, .cta-button:focus-visible {
+      background: linear-gradient(90deg, var(--orange-1), var(--orange-2));
+      color: #ffffff;
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .cta-button:focus-visible { box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); }
+    .cta-vouchi {
+      width: clamp(140px, 18vw, 180px);
+      flex-shrink: 0;
+      filter:
+        drop-shadow(0 0 14px rgba(255, 255, 255, 0.55))
+        drop-shadow(0 0 28px rgba(255, 255, 255, 0.30));
+    }
+    @media (max-width: 720px) {
+      .cta { flex-direction: column-reverse; text-align: center; }
+      .cta p { margin-left: auto; margin-right: auto; }
+      .cta-vouchi { width: 140px; }
+    }
+
+    /* ===== A11Y ===== */
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="badge">Sovendus &times; OMR</span>
+        <h1>So, did you get it <span class="nobr">right?<span class="eyes" aria-hidden="true">&#128064;</span></span></h1>
+        <p class="sub">Three real shoppers &amp; their purchases. 100s of guesses at the Sovendus booth.</p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <p>At OMR Festival 2026 we gave visitors one deceptively simple question: <strong>what does this person buy next?</strong> Each persona was built from real anonymized Sovendus consumer data. Most people were confident. Not everyone was right. Scroll down to see what the crowd guessed and what these shoppers actually bought.</p>
+    </section>
+
+    <section class="reveals" aria-label="Persona reveals">
+      <!-- Persona cards are generated by JS from PERSONAS data block below -->
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <h2>Your next customer just checked out somewhere else.</h2>
+        <p>Sovendus puts your brand in front of millions of high-intent European shoppers at the exact moment they are ready to buy again.</p>
+        <p>No guesswork. No wasted spend. Just the right person at the right time.</p>
+        <a class="cta-button" href="https://web.sovendus.com" target="_blank" rel="noopener">Discover Sovendus &rarr;</a>
+      </div>
+      <img src="./assets/images/vouchi-shopper.webp" alt="" class="cta-vouchi" loading="lazy" width="500" height="625" decoding="async">
+    </section>
+
+  </main>
+
+  <script>
+    // ============================================================
+    // FAIR DATA — fill in after OMR Festival 2026 (May 5–6)
+    // Source: game input.csv, the most-frequent value per round.
+    // ============================================================
+    // Each persona has 4 OPTIONS (the same four shown in the kiosk game).
+    // `topGuess` and `actualAnswer` must be one of the option labels —
+    // the matching image is looked up automatically.
+    const PERSONAS = [
+      {
+        name: 'Sally',
+        age: 36,
+        bought: { label: 'Robot Lawnmower', img: './assets/images/lawn-mower-robot.webp' },
+        options: {
+          'Jeans':    './assets/images/jeans.webp',
+          'Sex Toy':  './assets/images/sex-toy.webp',
+          'Shoes':    './assets/images/shoes.webp',
+          'Golf Bag': './assets/images/golf-bag.webp'
+        },
+        topGuess: 'Shoes',           // TODO: replace with real top guess after festival
+        topGuessPct: 42,             // TODO: replace with real %
+        actualAnswer: 'Sex Toy'
+      },
+      {
+        name: 'Marcus',
+        age: 52,
+        bought: { label: 'Military Jacket', img: './assets/images/military-jacket.webp' },
+        options: {
+          'Chair':         './assets/images/chair.webp',
+          'Muesli':        './assets/images/muesli.webp',
+          'Flowers':       './assets/images/flowers.webp',
+          'Tennis Racket': './assets/images/tennis-racket.webp'
+        },
+        topGuess: 'Tennis Racket',   // TODO: replace with real top guess
+        topGuessPct: 38,             // TODO: replace with real %
+        actualAnswer: 'Flowers'
+      },
+      {
+        name: 'Tim',
+        age: 28,
+        bought: { label: 'Motorcycle Helmet', img: './assets/images/motorcycle-helmet.webp' },
+        options: {
+          'Boots':      './assets/images/boots.webp',
+          'Puzzle':     './assets/images/puzzle.webp',
+          'Sunglasses': './assets/images/sunglasses.webp',
+          'Boxers':     './assets/images/boxers.webp'
+        },
+        topGuess: 'Sunglasses',      // TODO: replace with real top guess
+        topGuessPct: 51,             // TODO: replace with real %
+        actualAnswer: 'Puzzle'
+      }
+    ];
+
+    // ============================================================
+    // RENDER PERSONA CARDS
+    // ============================================================
+    const reveals = document.querySelector('.reveals');
+    reveals.innerHTML = PERSONAS.map(p => {
+      const guessImg = p.options[p.topGuess];
+      const answerImg = p.options[p.actualAnswer];
+      return `
+      <article class="persona">
+
+        <!-- Block 1: persona + just-bought (text left, image right) — matches game layout -->
+        <div class="psection">
+          <div class="pblock-text">
+            <span class="pblock-name">${p.name}, ${p.age}</span>
+            <span class="pblock-context">bought a</span>
+            <span class="pblock-product">${p.bought.label}</span>
+          </div>
+          <div class="pblock-img">
+            <img src="${p.bought.img}" alt="${p.bought.label}" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- Block 2: most OMR visitors guessed (image left, text right) -->
+        <div class="psection flip">
+          <div class="pblock-text">
+            <span class="pblock-label">Most OMR visitors guessed</span>
+            <span class="pblock-product">${p.topGuess} &mdash; <span class="pct">${p.topGuessPct}%</span></span>
+          </div>
+          <div class="pblock-img">
+            <img src="${guessImg}" alt="${p.topGuess}" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- Block 3: scratch reveal (text left, scratch right) -->
+        <div class="psection">
+          <div class="pblock-text">
+            <span class="pblock-label">Reveal</span>
+            <span class="pblock-question">But what did ${p.name}<br>actually buy?</span>
+          </div>
+          <div class="scratch-wrap">
+            <div class="scratch">
+              <div class="scratch-answer">
+                <img src="${answerImg}" alt="${p.actualAnswer}" loading="lazy" decoding="async">
+                <span class="answer-text">${p.actualAnswer}</span>
+              </div>
+              <canvas class="scratch-canvas" role="img" aria-label="Scratch off to reveal ${p.name}'s actual purchase"></canvas>
+              <div class="scratch-hint" aria-hidden="true">Scratch to reveal</div>
+            </div>
+            <button class="reveal-btn" type="button" aria-label="Reveal ${p.name}'s actual purchase">or tap to reveal</button>
+          </div>
+        </div>
+
+      </article>`;
+    }).join('');
+
+    // ============================================================
+    // SCRATCH-OFF — canvas, mouse + touch, with button fallback
+    // ============================================================
+    document.querySelectorAll('.scratch').forEach(setupScratch);
+
+    function setupScratch(wrap) {
+      const canvas = wrap.querySelector('.scratch-canvas');
+      const hint = wrap.querySelector('.scratch-hint');
+      const btn = wrap.parentElement.querySelector('.reveal-btn');
+      const ctx = canvas.getContext('2d');
+      let revealed = false;
+      let drawing = false;
+
+      function paintCover() {
+        const r = wrap.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.round(r.width * dpr);
+        canvas.height = Math.round(r.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        // Vibrant diagonal orange gradient — deeper to lighter
+        const g = ctx.createLinearGradient(0, 0, r.width, r.height);
+        g.addColorStop(0,    '#FF3D00');
+        g.addColorStop(0.5,  '#FF7A1A');
+        g.addColorStop(1,    '#FFB347');
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, r.width, r.height);
+        ctx.globalCompositeOperation = 'destination-out';
+        hint.style.opacity = '1';
+      }
+
+      paintCover();
+      let resizeT;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeT);
+        resizeT = setTimeout(() => { if (!revealed) paintCover(); }, 150);
+      });
+
+      function pointFromEvent(e) {
+        const r = canvas.getBoundingClientRect();
+        const t = e.touches && e.touches[0] ? e.touches[0] : e;
+        return { x: t.clientX - r.left, y: t.clientY - r.top };
+      }
+
+      function scratchAt(x, y) {
+        ctx.beginPath();
+        ctx.arc(x, y, 22, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function onStart(e) {
+        if (revealed) return;
+        drawing = true;
+        hint.style.opacity = '0';
+        const p = pointFromEvent(e);
+        scratchAt(p.x, p.y);
+        e.preventDefault();
+      }
+      function onMove(e) {
+        if (!drawing || revealed) return;
+        const p = pointFromEvent(e);
+        scratchAt(p.x, p.y);
+        e.preventDefault();
+      }
+      function onEnd() {
+        if (!drawing || revealed) return;
+        drawing = false;
+        if (clearedRatio() > 0.5) revealAll();
+      }
+
+      function clearedRatio() {
+        const w = canvas.width, h = canvas.height;
+        const data = ctx.getImageData(0, 0, w, h).data;
+        let cleared = 0, sampled = 0;
+        const step = 4 * 64;
+        for (let i = 3; i < data.length; i += step) {
+          sampled++;
+          if (data[i] === 0) cleared++;
+        }
+        return cleared / sampled;
+      }
+
+      function revealAll() {
+        if (revealed) return;
+        revealed = true;
+        canvas.style.opacity = '0';
+        setTimeout(() => { canvas.remove(); }, 450);
+        hint.style.opacity = '0';
+        if (btn) btn.style.display = 'none';
+      }
+
+      canvas.addEventListener('mousedown', onStart);
+      canvas.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onEnd);
+      canvas.addEventListener('touchstart', onStart, { passive: false });
+      canvas.addEventListener('touchmove', onMove, { passive: false });
+      canvas.addEventListener('touchend', onEnd);
+      canvas.addEventListener('touchcancel', onEnd);
+
+      if (btn) btn.addEventListener('click', revealAll);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "omr-game",
+  "version": "1.0.0",
+  "description": "Sovendus OMR Festival touchscreen kiosk game",
+  "main": "main.js",
+  "scripts": {
+    "start": "node launch.js"
+  },
+  "dependencies": {
+    "electron": "^30.5.1",
+    "xlsx": "^0.18.5"
+  }
+}

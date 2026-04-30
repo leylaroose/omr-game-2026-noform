@@ -1,0 +1,16 @@
+node_modules/
+
+# Participant data (contains personal info — never commit)
+game input.csv
+game input.xlsx
+
+# Internal docs / source briefs
+*.docx
+prompt.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/
